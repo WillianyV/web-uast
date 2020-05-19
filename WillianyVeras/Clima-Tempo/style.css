@@ -1,0 +1,41 @@
+.centralizar{
+    width:80%;
+    margin:10px auto;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+h1{
+    color: #666666;
+}
+
+#formbuscar{
+    margin-top: 65px;
+}
+
+input{
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    padding: 10px;
+    width: 290px;
+    margin-right: 10px;
+}
+
+button{
+    border: 1px solid #ff6666;
+    background-color: #ff6666;
+    border-radius: 5px;
+    padding: 10px 60px;
+    color: white;
+    font-weight: bold;
+}
+
+button:hover{ cursor: pointer;}
+
+h2{
+    color:#336633;
+    background-color: #F4FFFF;
+    padding: 12px 0;
+    margin-top: 40px;
+    font-weight: 400;
+}
