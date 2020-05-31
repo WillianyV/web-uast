@@ -1,10 +1,9 @@
 $(function(){
     var texto = $('#texto');
-    var letras = $('#nLetras');
-    var palavras = $('#nPalavras');
+    var letras 
+    var palavras 
 
-    var segundos = 0;
-    var minutos = 0;
+    var segundos = 15;
     var click = 0;
     var cronometro;
 
@@ -32,8 +31,8 @@ $(function(){
     });//fim butão iniciar
     //contar letras e palavras
     $(document).on('input','#texto',function(){
-        $('#nLetras').text($('#texto').val().replace(/ /g,'').length);//Fonte: http://www.jquerybyexample.net/2012/04/strip-or-remove-all-white-spaces-using.html
-        $('#nPalavras').text($('#texto').val().split(' ').length);
+        letras = $('#nLetras').text($('#texto').val().replace(/ /g,'').length);//Fonte: http://www.jquerybyexample.net/2012/04/strip-or-remove-all-white-spaces-using.html
+        palavras = $('#nPalavras').text($('#texto').val().split(' ').length);
     });//fim contar letras e palavras
         
     //FUNCOES
@@ -51,16 +50,31 @@ $(function(){
         $('#btn').css('color','white');
         $('#btn').css('background-color','#2A628F');
         $('#btn').css('border','1px solid #2A628F');
+        
     }//fim btn iniciar    
     //funcao contar
     function contar(){
-        if(segundos == 59){
-            segundos = 0
-            $('#seg').text(retornarDoisDigitos(segundos));
-            minutos++
-            $('#min').text(retornarDoisDigitos(minutos));
-        }    
-        segundos++
-        $('#seg').text(retornarDoisDigitos(segundos));
-    }//fim contar     
+        if(segundos == 0){ 
+            clearInterval(cronometro)
+            segundos = 16
+            $('#seg').text(retornarDoisDigitos(0)) 
+            $('textarea').prop('disabled', true) 
+            btnIniciar()  
+            jogo()              
+        }  
+        segundos--
+        $('#seg').text(retornarDoisDigitos(segundos))
+               
+    }//fim contar
+    
+    function jogo(){  
+        alert("entrou1")      
+        if($('#qtdLetras').val() >= letras && $('#qtdPalavras').val() >= palavras){
+            $('#msg').fadein(500);
+            alert("entrou 2")
+        }else{
+            $('#msg').text('Você Perdeu! Tente novamente').fadein(500);
+            alert("entrou 3")
+        }
+    }
 });

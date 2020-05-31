@@ -38,7 +38,7 @@ textarea:focus{
 .especificacoes{
     font-size: larger;
     margin-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
 }
 .especificacoes #jogue{
     font-weight: bold;
@@ -81,6 +81,9 @@ textarea:focus{
     border-radius: 5px;
     padding: 10px;  
 }
+.box{
+    margin-bottom: 20px;
+}
 
 #janela-1{
     width: 70%;
@@ -100,8 +103,12 @@ textarea:focus{
 }
 
 textarea{
-    /* max-width: 1073px;
-    min-width: 380px; */
     width:  78vw;
     height: 215px;
+}
+
+#msg{
+    /* display: none; */
+    text-align: center;
+    color: #2A628F;
 }
