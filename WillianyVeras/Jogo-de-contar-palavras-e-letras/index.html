@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game de contar palavras e letras</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cabecalho">
+        <div class="centralizar">
+            <h1>Cont</h1>
+            <h3>Game de contar palavras e letras</h3>
+        </div>
+    </div>
+    <div class="especificacoes centralizar">
+        <p>Escreva a quantidade de letras, palavras e o tempo que você dejesa levar para digitar. <span id="jogue">Jogue</span> e veja se consegue digitar antes que o seu tempo acabe!</p>
+        <div class="esp">
+        <img src="data:image/png;base64,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">    
+        <input type="number" min="0" id="qtdLetras" name="qtdLetras" placeholder="Quantidade de letras">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAABmJLR0QA/wD/AP+gvaeTAAAClUlEQVRYhe2XT0gUYRjGf+/suCqFHoqoCC1I0hYiWKLoJNQtCIKILkX+YY2sTC9FXvYi1EWzsnLxT9QlIgqEbgWeApGNCFaNhFICRfSgZKvuzLxd3G2db7sWyPwu8877PrzzXObh+yAgIOD/INniYEP3CfV0u19glRa9TT1q/gkQqb932lNK/ZrxwZaXIAoqNXXd54wdQjo1cGMIIHKlZ6uXzpwyjFgyP9bf8h7AznXV6xDhqGF7dbUKmARQ9IkIu/ySaCzxOpkgE40l7LSjL/xzhRlgaH3fThExNKiOABtN2VborKtOiV9bEtoyla09j+OhkNp+TTLRlMk+Iw2dVf6564qTv2/FXTY0IbFXDKMBAZuZPzlV3/kO5Ihf4Fr24S99174BROq7JhQzEnZULG4bjsed2njcnpsuXyjwkZnUQGs1wIHGB/tCnvPJtKKjYwNtJyEvEgR5A/rRWLgmS9naU55bouV+zTB42WcE7fXPPZXF/H1imxqQKbMXELCJyUVCpL6rGbTSL3Cd8N2JZ1cXAGrqutoL/X2piqVbxOMe8bgVmS674597Kovjg60dANUXH24L2Ws3C1iZSg209kBeJCh6plBOaVgfAwsAlnBBESOnauH2MHi1YM0hTf65JcwAHev7ytQzNaCjQI/ZDwjYpOQi4VDj/T1/O6Nnz+DVl7r2Fjqjp/rbJrN1pKFzv3/uuuJMPG39DhCN9RatuMtG9ITEXvncd/0H5EWC47mvQIzbzPohfxLAsvigakZCNNYbTiaaMtFYb1Ha+fXVP7csZoDd6/sqVcXQOOqOAMc2mEKs9kL3PikJz+Zq5HKhe18yEXOgiWQi5tTUdZ83TAnp3Etx8aymM4ZGLJn39wICAv41vwH1gv5itG/ElwAAAABJRU5ErkJggg==">    
+        <input type="number" min="0" id="qtdPalavras" name="qtdPalavras" placeholder="Quantidade de palavras">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAABmJLR0QA/wD/AP+gvaeTAAAFUElEQVRYhc2Ya2xURRTHf2fu7lLLUyM+UDQxBrpdAYsxhkeDJESj4iPxEZGgdKt8aCPbQlqBBF0FDW3pbtFQoylbFRWiUQzqBxMfqIjGRCG12wVjNCI+UbFaHvua44fSpQUWdsuC/r/dmXP+87uZuXfODPwPJYNN9FWtHWbjyclGGY9wDuhwkH+s1T9EdZcUD9keba3uOe1Qly1YNXJI2jNXkLtRpgCuft2po56TwKeqbIy74y9/++yS7oJCTZzXNDTtcpaoyEJgBPC5qLwNutW6icWerf25L3a8/6kxLk2VqFAO3ARcLdCtomtciXRjx/q6/acM5fWHZwlEgLHAGypmeWxdoDOXlwEomR+aYBxZgXIrym6Bimh77fuDhiqtCC9FWAl8ZdRUdbYHth0v7or7W85PW33BMXJvZ1vNr8eL8fnXTAfbCpRaZVmsvbYx27gmK5C/ZTXCE6CbXMnUtGxAADZlxwlcZ1N2XLaYaCSwlSLPVJDNIjT4KsMNeUGVVoSXgi4Gae6K1N6ZyzrIRdHW6p5oJHC7ioRVqff6W+pygvL5m2eKsEKQTV2X/FUPooUAOiLR2LrAYuAVQVd5/eFZJ4TyVa0dppjnFTqdZHIewaAtLNARMCnyVApEBdquWvBMcVYoDsYfAsYaNVWFmrJsirZW96jVauDSg6kD9ceFunJ+eBQiDwJvnGhRF1Jdzy36GNgMBC6f++SIY6Dijt6jMFLFLD8TQBkAI8uBUZ4iO+cYKFGZA3yez4+xEOpsq+kQ+EJUB0L5qtYOA64ReOtMAvVJRd9WmDJxXtPQDJSNJycDbpRP/hMolY8BT9rtKctAYXUcgHUTG4SlYMyNAIjcAJp3OZROaazXqXdHMABG9FxAY/su+i1fQ6+/JQC6pBeKpd7K8MJ8PcZc9vevvekyOgOlwllAglfvSudrKDBtwLNSnq/HlmAwBcQVW5yBEuUg4OHOV5x8DY+FlA/yzbk2GHQBQwRzAA5XilbldxHEe/aP58Xg5xM69JPPH2pUuAP0NZC0wEfRS7qfzhfqp29HnO9ygaJ7M1CiugsRTBIvOUL1AkmdoE3RyKL6k2dkl+MxpVhFYBf0TV/xkO1AEmR6Lial/pbHFakDQqcKBIDVciDhJFI7MlDR1uoehM9UdPbJ8n3+UCPoMkGbuiK1i08ZCBBktirb+oqAI1WC6svA1SXzQxOyAs1vvECRxYWYsoynv3kSaJkRNvS1ZaAOuRIbBLqNkZXZDKLP1f/iSqYuLBQQgEVWAvvicWdjX9uAv29pZehRVB4WTHk0EthaqIGzqaQiNMOIbBGVR6LtNY/1tQ8o8lyJdCPKbrCthzfp06bx/obhBlkr6HfdPbapf98AqI71dfuNw31AqR5KrCcYzHraOSUFg8YRz3oEr4rzwJ5XFx3MCgXQ2Va7xSrLgNu8P4xaPZgN9mRAvu9HhlBuFajrWhd47+iQrAP6KsMNqtQLsoki972Dvazor/H+huEOnheBW0BWdUVqlh4vLutet3f7O++eW3bDAUGrSaVvGT3p+s69O97ZPVigkorQDAfX6yJMFajritRm/cpPOjU+f/NMxbQDlwKbjZHlnW01HbnC+PzNkyyyUpDZgn6XVip2ti/68EQ5Oa2XqxY8U3z4GBQARgFfAm8qbHUbZ2fHxX/+RDBoCQbNxD3njEnadImIlqPmZtAyYJ+otHT32KajF/Wgofp0+dwnR3iK7BxRnaMwFXD36z76fiqhyjYjbIjHnY3fvLTw71zHGfSXNXFe09C021OmYscJMhprh2FMj1r7mxj52kmkdpzuA+0Z1b9bBRbrJrYjXQAAAABJRU5ErkJggg==">
+        <input type="number" min="0" max="59" name="minutos" placeholder="Quantos minutos"> 
+        <button id="btn">Iniciar</button>
+        </div> 
+    </div>
+        
+    <div class="box centralizar">
+        <div class="legenda">
+            <section id="janela-1">Digite o texto no campo abaixo:</section>
+            <section id="janela-2">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAlCAYAAADFniADAAAABmJLR0QA/wD/AP+gvaeTAAAFUElEQVRYhc2Ya2xURRTHf2fu7lLLUyM+UDQxBrpdAYsxhkeDJESj4iPxEZGgdKt8aCPbQlqBBF0FDW3pbtFQoylbFRWiUQzqBxMfqIjGRCG12wVjNCI+UbFaHvua44fSpQUWdsuC/r/dmXP+87uZuXfODPwPJYNN9FWtHWbjyclGGY9wDuhwkH+s1T9EdZcUD9keba3uOe1Qly1YNXJI2jNXkLtRpgCuft2po56TwKeqbIy74y9/++yS7oJCTZzXNDTtcpaoyEJgBPC5qLwNutW6icWerf25L3a8/6kxLk2VqFAO3ARcLdCtomtciXRjx/q6/acM5fWHZwlEgLHAGypmeWxdoDOXlwEomR+aYBxZgXIrym6Bimh77fuDhiqtCC9FWAl8ZdRUdbYHth0v7or7W85PW33BMXJvZ1vNr8eL8fnXTAfbCpRaZVmsvbYx27gmK5C/ZTXCE6CbXMnUtGxAADZlxwlcZ1N2XLaYaCSwlSLPVJDNIjT4KsMNeUGVVoSXgi4Gae6K1N6ZyzrIRdHW6p5oJHC7ioRVqff6W+pygvL5m2eKsEKQTV2X/FUPooUAOiLR2LrAYuAVQVd5/eFZJ4TyVa0dppjnFTqdZHIewaAtLNARMCnyVApEBdquWvBMcVYoDsYfAsYaNVWFmrJsirZW96jVauDSg6kD9ceFunJ+eBQiDwJvnGhRF1Jdzy36GNgMBC6f++SIY6Dijt6jMFLFLD8TQBkAI8uBUZ4iO+cYKFGZA3yez4+xEOpsq+kQ+EJUB0L5qtYOA64ReOtMAvVJRd9WmDJxXtPQDJSNJycDbpRP/hMolY8BT9rtKctAYXUcgHUTG4SlYMyNAIjcAJp3OZROaazXqXdHMABG9FxAY/su+i1fQ6+/JQC6pBeKpd7K8MJ8PcZc9vevvekyOgOlwllAglfvSudrKDBtwLNSnq/HlmAwBcQVW5yBEuUg4OHOV5x8DY+FlA/yzbk2GHQBQwRzAA5XilbldxHEe/aP58Xg5xM69JPPH2pUuAP0NZC0wEfRS7qfzhfqp29HnO9ygaJ7M1CiugsRTBIvOUL1AkmdoE3RyKL6k2dkl+MxpVhFYBf0TV/xkO1AEmR6Lial/pbHFakDQqcKBIDVciDhJFI7MlDR1uoehM9UdPbJ8n3+UCPoMkGbuiK1i08ZCBBktirb+oqAI1WC6svA1SXzQxOyAs1vvECRxYWYsoynv3kSaJkRNvS1ZaAOuRIbBLqNkZXZDKLP1f/iSqYuLBQQgEVWAvvicWdjX9uAv29pZehRVB4WTHk0EthaqIGzqaQiNMOIbBGVR6LtNY/1tQ8o8lyJdCPKbrCthzfp06bx/obhBlkr6HfdPbapf98AqI71dfuNw31AqR5KrCcYzHraOSUFg8YRz3oEr4rzwJ5XFx3MCgXQ2Va7xSrLgNu8P4xaPZgN9mRAvu9HhlBuFajrWhd47+iQrAP6KsMNqtQLsoki972Dvazor/H+huEOnheBW0BWdUVqlh4vLutet3f7O++eW3bDAUGrSaVvGT3p+s69O97ZPVigkorQDAfX6yJMFajritRm/cpPOjU+f/NMxbQDlwKbjZHlnW01HbnC+PzNkyyyUpDZgn6XVip2ti/68EQ5Oa2XqxY8U3z4GBQARgFfAm8qbHUbZ2fHxX/+RDBoCQbNxD3njEnadImIlqPmZtAyYJ+otHT32KajF/Wgofp0+dwnR3iK7BxRnaMwFXD36z76fiqhyjYjbIjHnY3fvLTw71zHGfSXNXFe09C021OmYscJMhprh2FMj1r7mxj52kmkdpzuA+0Z1b9bBRbrJrYjXQAAAABJRU5ErkJggg==">
+            <span id="min">00</span> : <span id="seg">00</span> 
+            </section>       
+        </div>
+        <textarea name="texto" id="texto"></textarea>
+        <div class="resultado">
+            Letras: <span id="nLetras">0</span>
+            Palavras: <span id="nPalavras">0</span>
+        </div>
+    </div>
+    <div class="msg centralizar">
+        <h1>Parabéns! Você ganhou!</h1>
+    </div>
+    <!-- Fim do codigo -->
+    <script src="script.js"></script>
+</body>
+</html>
