@@ -11,6 +11,8 @@ class ProfessorVO extends UsuarioVO
     private $id, $vagas_orientados, $cod_servidor;
     private $cursos = array(CursoVO::class); // perguntar a professor
 
+//    private $cursos[] = CursoVO;
+
     /**
      * ProfessorVO constructor.
      * @param $id

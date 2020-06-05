@@ -5,12 +5,12 @@ namespace ProjetoSGES\src\model\VO;
 
 use ProjetoSGES\src\model\VO\UsuarioVO;
 
-class Coordenacao extends UsuarioVO
+class CoordenacaoVO extends UsuarioVO
 {
     private $codigo_servidor;
 
     /**
-     * Coordenacao constructor.
+     * CoordenacaoVO constructor.
      * @param $codigo_servidor
      */
     public function __construct($codigo_servidor)

@@ -2,12 +2,10 @@
 
 
 namespace ProjetoSGES\src\model\DAO;
-
 require "Connection.php";
+use ProjetoSGES\src\model\VO\CoordenacaoVO;
 
-use ProjetoSGES\src\model\VO\AlunoVO;
-
-class AlunosDao implements InterfacesDAO
+class CoordenacaoDAO implements InterfacesDAO
 {
 
     static function create($dado)
@@ -17,14 +15,7 @@ class AlunosDao implements InterfacesDAO
 
     static function findAll()
     {
-        $alunos = [];
-        $link = getConnection();
-        $query = "select * from alunos";
-        if($result = $link->query($query)){
-            while($row = $result->fetch_row()){
-//                $alunos [] = new AlunoVO();
-            }
-        }
+        // TODO: Implement findAll() method.
     }
 
     static function findById($id)

@@ -9,7 +9,7 @@ class EnderecoVO
     private $id, $numero, $rua, $bairro, $cidade, $uf, $cep;
 
     /**
-     * EnderecoVO constructor.
+     * EnderecoDAO constructor.
      * @param $id
      * @param $numero
      * @param $rua
