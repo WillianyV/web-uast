@@ -1,0 +1,104 @@
+CREATE TABLE `enderecos` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `rua` varchar(255),
+    `numero` int,
+    `cidade` varchar(20),
+    `uf` varchar(3),
+    `cep` varchar(20),
+    `bairro` varchar(50),
+    PRIMARY KEY(id)
+) DEFAULT CHARSET=utf8;
+
+CREATE TABLE `cursos` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `horas_estagio` int,
+    `nome` varchar(255) unique,
+    PRIMARY KEY(id)
+)DEFAULT CHARSET=utf8;
+
+CREATE TABLE `empresas` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `nome` varchar(255),
+    `num_vagas` int,
+    `telefone` varchar(20),
+    `proprietario` varchar(255),
+    `responsavel` varchar(255),
+    `cpfResponsavel` varchar(20) unique,
+    `cpfProprietario` varchar(20) unique,
+    `cnpj` varchar(30) unique,
+    `id_enderecos` int,
+    `id_cursos` int,
+    PRIMARY KEY(id)
+)DEFAULT CHARSET=utf8;
+
+ALTER TABLE `empresas` ADD CONSTRAINT `fk_endereco` FOREIGN KEY ( `id_enderecos`) REFERENCES `enderecos`( `id`) ;
+ALTER TABLE `empresas` ADD CONSTRAINT `fk_curso` FOREIGN KEY ( `id_cursos` ) REFERENCES `cursos` ( `id` ) ;
+
+CREATE TABLE `alunos` (
+    `id`  int NOT NULL AUTO_INCREMENT,
+    `nome` varchar(255),
+    `sexo` varchar(10),
+    `email` varchar(50),
+    `login` varchar(50) unique,
+    `senha` varchar(50),
+    `rg` varchar(15) unique,
+    `data_Nasc` date,
+    `cpf` varchar(16) unique,
+    `matricula` varchar(50) unique,
+    `id_enderecos` int,
+    `id_cursos` int,
+    PRIMARY KEY(id)
+)DEFAULT CHARSET=utf8;
+
+ALTER TABLE `alunos` ADD CONSTRAINT `fk_enderecos` FOREIGN KEY ( `id_enderecos` ) REFERENCES `enderecos` ( `id` ) ;
+ALTER TABLE `alunos` ADD CONSTRAINT `fk_cursos` FOREIGN KEY ( `id_cursos` ) REFERENCES `cursos` ( `id` ) ;
+
+CREATE TABLE `professores` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `nome` varchar(255),
+    `vagas_orientandos` int,
+    `login` varchar(50) unique,
+    `senha` varchar(50),
+    `cod_servidor` varchar(20) unique,
+    PRIMARY KEY(id)
+)DEFAULT CHARSET=utf8;
+
+CREATE TABLE `professores_cursos`(
+    `id` int NOT NULL AUTO_INCREMENT,
+    `id_professor` int,
+    `id_curso` int,
+    PRIMARY KEY(id)
+)DEFAULT CHARSET=utf8;
+
+ALTER TABLE `professores_cursos` ADD CONSTRAINT `fk_professores` FOREIGN KEY ( `id_professor` ) REFERENCES `professores` ( `id` ) ;
+ALTER TABLE `professores_cursos` ADD CONSTRAINT `fk_id_cursos` FOREIGN KEY ( `id_curso` ) REFERENCES `cursos` ( `id` ) ;
+
+CREATE TABLE `coordenacao` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `nome` varchar(255),
+    `login` varchar(50) unique,
+    `senha` varchar(50),
+    `cod_servidor` varchar(20) unique,
+    PRIMARY KEY(id)
+)DEFAULT CHARSET=utf8;
+
+CREATE TABLE `estagios` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `data_inicio` date,
+    `num_seguro` varchar(30),
+    `data_fim` date,
+    `status` int,
+    `matricula` varchar(20) unique,
+    `turno` int,
+    `id_curso` int,
+    `id_professor` int,
+    `id_empresa` int,
+    `id_aluno` int,
+    PRIMARY KEY(id)
+)DEFAULT CHARSET=utf8;
+
+    ALTER TABLE `estagios` ADD CONSTRAINT `fk_estagios_curso` FOREIGN KEY ( `id_curso` ) REFERENCES `cursos` ( `id` ) ;
+    ALTER TABLE `estagios` ADD CONSTRAINT `fk_estagios_professor` FOREIGN KEY ( `id_professor` ) REFERENCES `professores` ( `id` ) ;    
+    ALTER TABLE `estagios` ADD CONSTRAINT `fk_estagios_empresa` FOREIGN KEY ( `id_empresa` ) REFERENCES `empresas` ( `id` ) ;
+    ALTER TABLE `estagios` ADD CONSTRAINT `fk_estagios_aluno` FOREIGN KEY ( `id_aluno` ) REFERENCES `alunos` ( `id` ) ;
+
