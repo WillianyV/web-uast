@@ -10,22 +10,29 @@ class CursoController implements InterfacesController
 
     function index()
     {
-        // TODO: Implement index() method.
+        $cursos = CursoDAO::findAll();
+        require __DIR__ . "/../view/cursos/list.php";
+
     }
 
     function view()
     {
-        // TODO: Implement view() method.
+        $id = $_GET['id'];
+        $curso = CursoDAO::findById($id);
+        require __DIR__ . "/../view/cursos/view.php";
     }
 
     function create()
     {
-        // TODO: Implement create() method.
+        require __DIR__ . "/../view/cursos/create.php";
     }
 
     function edit()
     {
-        // TODO: Implement edit() method.
+        $id = $_GET['id'];
+        $curso = CursoDAO::findById($id);
+        require __DIR__ . "/../view/cursos/edit.php";
+
     }
 
     function store()
@@ -40,6 +47,10 @@ class CursoController implements InterfacesController
 
     function delete()
     {
-        // TODO: Implement delete() method.
+        $id = $_GET['id'];
+        CursoDAO::delete($id);
+        session_start();
+        $_SESSION['message'] = "Curso excluído com sucesso!";
+
     }
 }

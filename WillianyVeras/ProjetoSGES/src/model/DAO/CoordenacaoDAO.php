@@ -10,7 +10,10 @@ class CoordenacaoDAO implements InterfacesDAO
 
     static function create($dado)
     {
-        // TODO: Implement create() method.
+        $name = $dado->getNome();
+        $login = $dado->getLogin();
+        $senha = $dado->getSenha();
+        $cod_servidor = $dado->getCodigoServidor();
     }
 
     static function findAll()

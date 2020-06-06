@@ -10,22 +10,28 @@ class EstagioController implements InterfacesController
 
     function index()
     {
-        // TODO: Implement index() method.
+        $estagios = EstagioDAO::findAll();
+        require __DIR__ . "/../view/estagios/list.php";
     }
 
     function view()
     {
-        // TODO: Implement view() method.
+        $id = $_GET['id'];
+        $estagio= EstagioDAO::findById($id);
+        require __DIR__ . "/../view/estagios/view.php";
+
     }
 
     function create()
     {
-        // TODO: Implement create() method.
+        require __DIR__ . "/../view/estagios/create.php";
     }
 
     function edit()
     {
-        // TODO: Implement edit() method.
+        $id = $_GET['id'];
+        $estagio = EstagioDAO::findById($id);
+        require __DIR__ . "/../view/estagios/edit.php";
     }
 
     function store()
@@ -40,6 +46,10 @@ class EstagioController implements InterfacesController
 
     function delete()
     {
-        // TODO: Implement delete() method.
+        $id = $_GET['id'];
+        EstagioDAO::delete($id);
+        session_start();
+        $_SESSION['message'] = "Estágio excluída com sucesso!";
+//        header("Location: /tarefas");
     }
 }

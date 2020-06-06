@@ -35,6 +35,7 @@ class AlunoVO extends UsuarioVO
         $this->curso = $curso;
     }
 
+
     /**
      * @return mixed
      */

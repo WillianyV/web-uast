@@ -10,36 +10,45 @@ class AlunoController implements InterfacesController
 
     function index()
     {
-        // TODO: Implement index() method.
+        $alunos = AlunosDao::findAll();
+        require __DIR__ . "/../view/alunos/list.php";
     }
 
     function view()
     {
-        // TODO: Implement view() method.
+        $id = $_GET['id'];
+        $aluno = AlunosDao::findById($id);
+        require __DIR__ . "/../view/alunos/view.php";
     }
 
     function create()
     {
-        // TODO: Implement create() method.
+        require __DIR__ . "/../view/alunos/create.php";
     }
 
     function edit()
     {
-        // TODO: Implement edit() method.
+        $id = $_GET['id'];
+        $aluno = AlunosDao::findById($id);
+        require __DIR__ . "/../view/alunos/edit.php";
     }
 
     function store()
     {
-        // TODO: Implement store() method.
+
     }
 
     function update()
     {
-        // TODO: Implement update() method.
+
     }
 
     function delete()
     {
-        // TODO: Implement delete() method.
+        $id = $_GET['id'];
+        AlunosDao::delete($id);
+        session_start();
+        $_SESSION['message'] = "Aluno excluído com sucesso!";
+//        header("Location: /tarefas");
     }
 }

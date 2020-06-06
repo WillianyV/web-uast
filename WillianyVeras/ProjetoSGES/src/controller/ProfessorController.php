@@ -10,22 +10,28 @@ class ProfessorController implements InterfacesController
 
     function index()
     {
-        // TODO: Implement index() method.
+        $professores = ProfessorDAO::findAll();
+        require __DIR__ . "/../view/professores/list.php";
     }
 
     function view()
     {
-        // TODO: Implement view() method.
+        $id = $_GET['id'];
+        $professor = ProfessorDAO::findById($id);
+        require __DIR__ . "/../view/professores/view.php";
     }
 
     function create()
     {
-        // TODO: Implement create() method.
+        require __DIR__ . "/../view/professores/create.php";
     }
 
     function edit()
     {
-        // TODO: Implement edit() method.
+        $id = $_GET['id'];
+        $professor = ProfessorDAO::findById($id);
+        require __DIR__ . "/../view/professores/edit.php";
+
     }
 
     function store()
@@ -40,6 +46,10 @@ class ProfessorController implements InterfacesController
 
     function delete()
     {
-        // TODO: Implement delete() method.
+        $id = $_GET['id'];
+        ProfessorDAO::delete($id);
+        session_start();
+        $_SESSION['message'] = "Professor excluído com sucesso!";
+//        header("Location: /tarefas");
     }
 }

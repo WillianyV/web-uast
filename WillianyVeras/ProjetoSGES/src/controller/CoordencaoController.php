@@ -10,22 +10,27 @@ class CoordencaoController implements InterfacesController
 
     function index()
     {
-        // TODO: Implement index() method.
+        $coordenacao = CoordenacaoDAO::findAll();
+        require __DIR__ . "/../view/coordenacao/list.php";
     }
 
     function view()
     {
-        // TODO: Implement view() method.
+        $id = $_GET['id'];
+        $coordenacao = CoordenacaoDAO::findById($id);
+        require __DIR__ . "/../view/coordenacao/view.php";
     }
 
     function create()
     {
-        // TODO: Implement create() method.
+        require __DIR__ . "/../view/coordenacao/create.php";
     }
 
     function edit()
     {
-        // TODO: Implement edit() method.
+        $id = $_GET['id'];
+        $coordenacao  = CoordenacaoDAO::findById($id);
+        require __DIR__ . "/../view/coordenacao/edit.php";
     }
 
     function store()
@@ -40,6 +45,8 @@ class CoordencaoController implements InterfacesController
 
     function delete()
     {
-        // TODO: Implement delete() method.
+        $id = $_GET['id'];
+        CoordenacaoDAO::delete($id);
+        $_SESSION['message'] = "Coordenador excluído com sucesso";
     }
 }

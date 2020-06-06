@@ -10,22 +10,27 @@ class EmpresaController implements InterfacesController
 
     function index()
     {
-        // TODO: Implement index() method.
+        $empresas = EmpresaDAO::findAll();
+        require __DIR__ . "/../view/empresas/list.php";
     }
 
     function view()
     {
-        // TODO: Implement view() method.
+        $id = $_GET['id'];
+        $empresa = EmpresaDAO::findById($id);
+        require __DIR__ . "/../view/empresas/view.php";
     }
 
     function create()
     {
-        // TODO: Implement create() method.
+        require __DIR__ . "/../view/empresas/create.php";
     }
 
     function edit()
     {
-        // TODO: Implement edit() method.
+        $id = $_GET['id'];
+        $empresa = EmpresaDAO::findById($id);
+        require __DIR__ . "/../view/empresas/edit.php";
     }
 
     function store()
@@ -40,6 +45,10 @@ class EmpresaController implements InterfacesController
 
     function delete()
     {
-        // TODO: Implement delete() method.
+        $id = $_GET['id'];
+        EmpresaDAO::delete($id);
+        session_start();
+        $_SESSION['message'] = "Empresa excluída com sucesso!";
+//        header("Location: /tarefas");
     }
 }

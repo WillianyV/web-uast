@@ -39,6 +39,9 @@ class AlunosDao implements InterfacesDAO
 
     static function delete($id)
     {
-        // TODO: Implement delete() method.
+        $link = getConnection();
+        $sql_query = "delete from alunos where id=$id";
+        $link->query($sql_query);
+        $link->close();
     }
 }
