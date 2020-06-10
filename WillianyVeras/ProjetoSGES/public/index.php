@@ -2,12 +2,20 @@
 
 require __DIR__ . "/../autoload.php";
 
-//IMPORTANDO CONTROLADORES
-use ProjetoSGES\src\controller\AlunoController;
 
-//SERVIDOR
-$caminho = $_SERVER["PATH_INFO"];
+use ProjetoSGES\src\controller\AlunoController;
+use ProjetoSGES\src\controller\CursoController;
+use ProjetoSGES\src\controller\CoordencaoController;
+
+
+$caminho = $_SERVER["PATH_INFO"]; // com erro
 $metodo = $_SERVER["REQUEST_METHOD"];
+
+if ($metodo == "POST"){
+    if(isset($_POST['_method'])){
+        $metodo = $_POST['_method'];
+    }
+}
 
 //ROTAS
 switch($caminho){
@@ -16,10 +24,20 @@ switch($caminho){
         metodo($metodo,$controller);
         break;
 
-    case "/professor":
+    case "/login":
         break;
 
-    case "/empresa":
+    case "/cursos":
+        $controller = new CursoController();
+        metodo($metodo, $controller);
+        break;
+
+    case "/coordenacao":
+        $controller = new CoordencaoController();
+        metodo($metodo,$controller);
+        break;
+
+    case "":
         break;
 
     default:

@@ -10,7 +10,7 @@ class EmpresaVO
     private $id,$vagas,$nome_empresa,$CNPJ,$telefone,$nome_proprietario,
         $nome_responsavel, $CPF_proprietario,$CPF_responsavel;
     private $endereco = EnderecoVO;
-    private $curso  = CursoVO;
+
 
     /**
      * EmpresaVO constructor.
@@ -39,6 +39,7 @@ class EmpresaVO
         $this->CPF_responsavel = $CPF_responsavel;
         $this->endereco = $endereco;
         $this->curso = $curso;
+
     }
 
     /**

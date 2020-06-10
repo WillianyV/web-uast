@@ -4,44 +4,27 @@
 namespace ProjetoSGES\src\model\VO;
 use ProjetoSGES\src\model\VO\UsuarioVO;
 use ProjetoSGES\src\model\DAO\CursoVO;
+use ProjetoSGES\src\model\VO\AlunoVO;
 
 
 class ProfessorVO extends UsuarioVO
 {
-    private $id, $vagas_orientados, $cod_servidor;
-    private $cursos = array(CursoVO::class); // perguntar a professor
 
-//    private $cursos[] = CursoVO;
+    private $vagas_orientados, $cod_servidor;
+    private $cursos = [];
 
     /**
      * ProfessorVO constructor.
-     * @param $id
      * @param $vagas_orientados
      * @param $cod_servidor
-     * @param string[] $cursos
+     * @param array $cursos
      */
-    public function __construct($id, $vagas_orientados, $cod_servidor, array $cursos)
+    public function __construct($id, $nome, $login, $senha, $vagas_orientados, $cod_servidor, array $cursos)
     {
-        $this->id = $id;
+        parent::__construct($id, $nome, $login, $senha);
         $this->vagas_orientados = $vagas_orientados;
         $this->cod_servidor = $cod_servidor;
         $this->cursos = $cursos;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
     }
 
     /**
@@ -77,7 +60,7 @@ class ProfessorVO extends UsuarioVO
     }
 
     /**
-     * @return string[]
+     * @return array
      */
     public function getCursos()
     {
@@ -85,11 +68,74 @@ class ProfessorVO extends UsuarioVO
     }
 
     /**
-     * @param string[] $cursos
+     * @param array $cursos
      */
     public function setCursos($cursos)
     {
         $this->cursos = $cursos;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * @param mixed $nome
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param mixed $login
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSenha()
+    {
+        return $this->senha;
+    }
+
+    /**
+     * @param mixed $senha
+     */
+    public function setSenha($senha)
+    {
+        $this->senha = $senha;
+    }
 }

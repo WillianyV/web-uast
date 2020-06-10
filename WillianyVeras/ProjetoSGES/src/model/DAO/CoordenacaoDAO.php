@@ -10,10 +10,19 @@ class CoordenacaoDAO implements InterfacesDAO
 
     static function create($dado)
     {
-        $name = $dado->getNome();
+        $nome = $dado->getNome();
         $login = $dado->getLogin();
         $senha = $dado->getSenha();
         $cod_servidor = $dado->getCodigoServidor();
+
+        $link = getConnection();
+        $sql_query = "INSERT INTO `coordenacao`( `nome`, `login`, `senha`, `cod_servidor`) VALUES ('{$nome}','{$login}','{$senha}','{$cod_servidor}')";
+        $result = $link->query($sql_query);
+        $link->close();
+
+        if(!$result){
+            die ("Erro ao cadastrar Coordenador" . mysqli_error());
+        }
     }
 
     static function findAll()

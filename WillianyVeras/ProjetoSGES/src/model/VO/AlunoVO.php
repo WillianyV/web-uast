@@ -2,7 +2,8 @@
 
 
 namespace ProjetoSGES\src\model\VO;
-use ProjetoSGES\src\model\DAO\UsuarioVO;
+
+use ProjetoSGES\src\model\VO\UsuarioVO;
 use ProjetoSGES\src\model\DAO\EnderecoVO;
 use ProjetoSGES\src\model\DAO\CursoVO;
 
@@ -23,8 +24,9 @@ class AlunoVO extends UsuarioVO
      * @param $endereco
      * @param $curso
      */
-    public function __construct($sexo, $rg, $cpf, $matricula, $email, $data_nasc, $endereco, $curso)
+    public function __construct($id, $nome, $login, $senha, $sexo, $rg, $cpf, $matricula, $email, $data_nasc, $endereco, $curso)
     {
+        parent::__construct($id, $nome, $login, $senha);
         $this->sexo = $sexo;
         $this->rg = $rg;
         $this->cpf = $cpf;
@@ -34,7 +36,6 @@ class AlunoVO extends UsuarioVO
         $this->endereco = $endereco;
         $this->curso = $curso;
     }
-
 
     /**
      * @return mixed
@@ -163,4 +164,69 @@ class AlunoVO extends UsuarioVO
     {
         $this->curso = $curso;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNome()
+    {
+        return $this->nome;
+    }
+
+    /**
+     * @param mixed $nome
+     */
+    public function setNome($nome)
+    {
+        $this->nome = $nome;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLogin()
+    {
+        return $this->login;
+    }
+
+    /**
+     * @param mixed $login
+     */
+    public function setLogin($login)
+    {
+        $this->login = $login;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSenha()
+    {
+        return $this->senha;
+    }
+
+    /**
+     * @param mixed $senha
+     */
+    public function setSenha($senha)
+    {
+        $this->senha = $senha;
+    }
+
 }

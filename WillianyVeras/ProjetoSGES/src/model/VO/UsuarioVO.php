@@ -6,7 +6,7 @@ namespace ProjetoSGES\src\model\VO;
 
 class UsuarioVO
 {
-    private $id, $nome, $login, $senha;
+    protected $id, $nome, $login, $senha;
 
     /**
      * UsuarioVO constructor.

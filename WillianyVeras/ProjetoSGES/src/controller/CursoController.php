@@ -37,12 +37,24 @@ class CursoController implements InterfacesController
 
     function store()
     {
-        // TODO: Implement store() method.
+        $horas_estagio = $_POST['horas_estagio'] ;
+        $nome =$_POST['nome'];
+        $cursoVO = new CursoVO(null,$horas_estagio,$nome);
+        CursoDAO::create($cursoVO);
+        session_start();
+        $_SESSION['message'] = "Curso : $nome, criado com sucesso!";
+
     }
 
     function update()
     {
-        // TODO: Implement update() method.
+        $id = $_GET['id'];
+        $horas_estagio = $_POST['horas_estagio'] ;
+        $nome =$_POST['nome'];
+        $cursoVO = new CursoVO(null,$horas_estagio,$nome);
+        CursoDAO::update($id, $cursoVO);
+        session_start();
+        $_SESSION['message'] = "Curso : $nome, atualizado com sucesso!!";
     }
 
     function delete()

@@ -1,11 +1,6 @@
 <?php
 
-
-namespace ProjetoSGES\src\model\DAO;
-
-
-class Connection
-{   function getConnection(){
+    function getConnection(){
         $servidor = "localhost";
         $usuario = "root";
         $senha = "";
@@ -13,10 +8,8 @@ class Connection
         $connection = new mysqli($servidor, $usuario, $senha, $nome_db);
 
         if(mysqli_connect_errno()){
-            die("Conexão Falhou" . mysqli_connect_errno());
+            die("Conexão Falhou" . mysqli_connect_error());
         }else{
             return $connection;
         }
-    }
-
 }

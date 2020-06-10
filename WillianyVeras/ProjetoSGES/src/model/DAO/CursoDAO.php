@@ -8,28 +8,68 @@ use ProjetoSGES\src\model\VO\CursoVO;
 class CursoDAO implements InterfacesDAO
 {
 
-    static function create($dado)
+    static function create($curso)
     {
-        // TODO: Implement create() method.
+
+        $horas_estagio = $curso->getHorasEstagio();
+        $nome = $curso->getNome();
+
+        $link = getConnection();
+        $sql_query = "INSERT INTO cursos (horas_estagio, nome) VALUES ('{$horas_estagio}','{$nome}')";
+        $result = $link->query($sql_query);
+        $link->close();
+
+        if(!$result){
+            die ("Erro ao cadastrar Curso " . mysqli_error());
+        }
     }
 
     static function findAll()
     {
-        // TODO: Implement findAll() method.
+        $cursos = [];
+        $link = getConnection();
+        $sql_query = "SELECT * FROM cursos";
+
+        if($result = $link->query($sql_query)){
+            while($row = $result->fetch_row()){
+                $cursos [] = new CursoVO($row[0],$row[1],$row[2]);
+            }
+        }
+
+        $link->close();
+        return $cursos;
     }
 
     static function findById($id)
     {
-        // TODO: Implement findById() method.
+        $link = getConnection();
+
+        $query = "SELECT * FROM tarefas WHERE id=$id";
+
+        if ($result = $link->query($query)){
+            while ($row = $result->fetch_row()){
+                return new CursoVO($row[0], $row[1], $row[2]);
+            }
+        }
+        $link->close();
+        return null;
     }
 
-    static function update($id, $dado)
+    static function update($id, $curso)
     {
-        // TODO: Implement update() method.
+        $horas_estagio = $curso->getHorasEstagio();
+        $nome = $curso->getNome();
+        $link = getConnection();
+        $query = "UPDATE cursos SET horas_estagio='{$horas_estagio}',nome='{$nome}' WHERE id=$id";
+        $link->query($query);
+        $link->close();
     }
 
     static function delete($id)
     {
-        // TODO: Implement delete() method.
+        $link = getConnection();
+        $query = "DELETE FROM cursos WHERE id=$id";
+        $link->query($query);
+        $link->close();
     }
 }

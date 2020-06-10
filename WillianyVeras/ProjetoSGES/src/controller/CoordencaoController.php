@@ -2,8 +2,10 @@
 
 
 namespace ProjetoSGES\src\controller;
+use ProjetoSGES\src\model\DAO\CursoDAO;
 use ProjetoSGES\src\model\VO\CoordenacaoVO;
 use ProjetoSGES\src\model\DAO\CoordenacaoDAO;
+use ProjetoSGES\src\model\VO\CursoVO;
 
 class CoordencaoController implements InterfacesController
 {
@@ -35,7 +37,15 @@ class CoordencaoController implements InterfacesController
 
     function store()
     {
-        // TODO: Implement store() method.
+        $nome = $_POST['nome'];
+        $login = $_POST['login'];
+        $senha = $_POST['senha'];
+        $cod_servidor = $_POST['cod_servidor'];
+
+        $coordenadorVO = new CoordenacaoVO(null,$nome,$login,$senha,$cod_servidor);
+        CoordenacaoDAO::create($coordenadorVO);
+        session_start();
+        $_SESSION['message'] = "Coordenador(a) : $nome, criado(a) com sucesso!";
     }
 
     function update()
