@@ -1,0 +1,114 @@
+/*.menu {*/
+/*    padding:0;*/
+/*    margin: 0 auto;*/
+/*}*/
+/*.logo{*/
+/*    padding: 12px 0 0 80px;*/
+/*    width: 150px;*/
+/*    height: auto;*/
+/*}*/
+/*nav ul{*/
+/*    float:right;*/
+/*    margin-right: 30px;*/
+/*}*/
+/*nav ul.menu-desktop li{*/
+/*    background: #38d39f;*/
+/*    position: relative;*/
+/*    list-style: none;*/
+/*    display: inline-block;*/
+/*}*/
+
+/*nav ul.menu-desktop li a{*/
+/*    display: block;*/
+/*    padding: 30px 40px;*/
+/*    color: #FFF;*/
+/*    text-decoration: none;*/
+/*    margin-right: -3px;*/
+/*    font-size: 80%;*/
+/*    letter-spacing: 0.60;*/
+/*}*/
+
+/*nav ul.menu-desktop li a:hover{*/
+/*    background: #32be8f;*/
+/*}*/
+
+/*nav ul.menu-desktop ul{*/
+/*    position: absolute;*/
+/*    display: none;*/
+/*}*/
+
+/*nav ul.menu-desktop li:hover > ul{*/
+/*    display: block;*/
+/*}*/
+
+/*nav ul.menu-desktop ul li{*/
+/*    width: 170px;*/
+/*    float: none;*/
+/*    display: list-item;*/
+/*    position: relative;*/
+/*}*/
+
+/*!*desktop*!*/
+/*@media screen and (min-width: 900px){*/
+/*    nav ul.menu-mobile{*/
+/*        display: none;*/
+/*    }*/
+/*    .menu-btn{*/
+/*        display: none;*/
+/*    }*/
+/*}*/
+
+/*!* para mobile *!*/
+/*@media screen and (max-width: 899px){*/
+/*    nav ul.menu-desktop{*/
+/*        display: none;*/
+/*    }*/
+/*    .logo{*/
+/*        padding: 10px 0 10px 80px;*/
+/*    }*/
+/*    .menu-btn{*/
+/*        position:absolute;*/
+/*        cursor: pointer;*/
+/*        display: block;*/
+/*        top:20px;*/
+/*        right:20px;*/
+/*        height: 30px;*/
+/*        width: 30px;*/
+/*    }*/
+    /*nav ul.menu-mobile{*/
+    /*    margin: 70px 0 0 0;*/
+    /*    padding: 0;*/
+    /*}*/
+    /*nav ul.menu-mobile li {*/
+    /*    width:100%;*/
+    /*    list-style-type:none;*/
+    /*    display: block;*/
+    /*}*/
+    /*nav ul.menu-mobile li a {*/
+    /*    padding: 20px 0;*/
+    /*    text-decoration: none;*/
+    /*    background-color: #32be8f;*/
+    /*    color:#FFF;*/
+    /*    display:block;*/
+    /*    margin-right:none;*/
+    /*    font-size: 80%;*/
+    /*    letter-spacing: 0.60;*/
+    /*    text-align: center;*/
+    /*    border-bottom: 1px solid #111;*/
+    /*}*/
+    /*nav ul.menu-mobile ul{*/
+    /*    position: absolute;*/
+    /*    display: none;*/
+    /*}*/
+
+    /*nav ul.menu-mobile li:hover > ul{*/
+    /*    display: block;*/
+    /*}*/
+
+    /*nav ul.menu-mobile ul li{*/
+    /*    width: 170px;*/
+    /*    float: none;*/
+    /*    display: list-item;*/
+    /*    position: relative;*/
+    /*}*/
+/*}*/

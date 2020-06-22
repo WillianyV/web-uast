@@ -9,9 +9,9 @@ use ProjetoSGES\src\model\DAO\CursoVO;
 
 class AlunoVO extends UsuarioVO
 {
-    private $sexo, $rg, $cpf, $matricula, $email, $data_nasc;
-    private $endereco = EnderecoVO;
-    private $curso = CursoVO;
+    private $sexo, $rg, $cpf, $matricula, $email, $data_nasc,$endereco,$curso;
+//    private $endereco = EnderecoVO;
+//    private $curso = CursoVO;
 
     /**
      * AlunoVO constructor.
@@ -24,7 +24,7 @@ class AlunoVO extends UsuarioVO
      * @param $endereco
      * @param $curso
      */
-    public function __construct($id, $nome, $login, $senha, $sexo, $rg, $cpf, $matricula, $email, $data_nasc, $endereco, $curso)
+    public function __construct($id, $nome, $sexo, $email, $login, $senha, $rg, $data_nasc, $cpf, $matricula, $endereco, $curso)
     {
         parent::__construct($id, $nome, $login, $senha);
         $this->sexo = $sexo;

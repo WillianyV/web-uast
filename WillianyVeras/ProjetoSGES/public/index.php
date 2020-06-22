@@ -6,7 +6,11 @@ require __DIR__ . "/../autoload.php";
 use ProjetoSGES\src\controller\AlunoController;
 use ProjetoSGES\src\controller\CursoController;
 use ProjetoSGES\src\controller\CoordencaoController;
-
+use ProjetoSGES\src\controller\EmpresaController;
+use ProjetoSGES\src\controller\EstagioController;
+use ProjetoSGES\src\controller\LoginController;
+use ProjetoSGES\src\controller\ProfessorController;
+use ProjetoSGES\src\controller\HomeCoordenacaoController;
 
 $caminho = $_SERVER["PATH_INFO"]; // com erro
 $metodo = $_SERVER["REQUEST_METHOD"];
@@ -19,12 +23,14 @@ if ($metodo == "POST"){
 
 //ROTAS
 switch($caminho){
-    case "/aluno":
+    case "/alunos":
         $controller = new AlunoController();
         metodo($metodo,$controller);
         break;
 
     case "/login":
+        $controller = new LoginController();
+        metodo($metodo,$controller);
         break;
 
     case "/cursos":
@@ -34,6 +40,26 @@ switch($caminho){
 
     case "/coordenacao":
         $controller = new CoordencaoController();
+        metodo($metodo,$controller);
+        break;
+
+    case "/empresas":
+        $controller = new EmpresaController();
+        metodo($metodo,$controller);
+        break;
+        
+    case "/estagios":
+        $controller = new EstagioController();
+        metodo($metodo,$controller);
+        break;
+
+    case "/professores":
+        $controller = new ProfessorController();
+        metodo($metodo,$controller);
+        break;
+
+    case "/home-coordenacao":
+        $controller = new HomeCoordenacaoController();
         metodo($metodo,$controller);
         break;
 

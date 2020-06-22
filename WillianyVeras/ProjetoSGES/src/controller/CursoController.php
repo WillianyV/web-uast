@@ -12,7 +12,6 @@ class CursoController implements InterfacesController
     {
         $cursos = CursoDAO::findAll();
         require __DIR__ . "/../view/cursos/list.php";
-
     }
 
     function view()
@@ -32,7 +31,6 @@ class CursoController implements InterfacesController
         $id = $_GET['id'];
         $curso = CursoDAO::findById($id);
         require __DIR__ . "/../view/cursos/edit.php";
-
     }
 
     function store()

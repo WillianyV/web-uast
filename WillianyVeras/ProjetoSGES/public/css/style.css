@@ -1,8 +1,136 @@
-*{
-    padding: 0;
-    margin: 0;
-}
 
 body{
-    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family:  'Roboto', sans-serif;;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    background: #38d39f;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+header .logo{
+    float: left;
+}
+
+header .logo a img{
+    padding: 5px 0 5px 0;
+    height: 50px;
+}
+
+header nav{
+    float: right;
+}
+
+header nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+header nav ul li{
+    list-style: none;
+    position: relative;
+}
+
+header nav ul li.sub-menu:before{
+    content: '\f0d7';
+    font-family: fontAwesome;
+    position: absolute;
+    line-height: 60px;
+    color: #FFF;
+    right: 5px;
+}
+
+header nav ul li.active.sub-menu:before{
+    content: '\f0d8';
+}
+
+header nav ul li ul{
+    position: absolute;
+    left: 0;
+    background: #2daa80;
+    display: none;
+}
+
+/*.active
+tem que ser ao clicar
+*/
+header nav ul li.active ul{
+    display: block;
+}
+
+header nav ul li ul li{
+    display: block;
+    width: 170px;
+}
+
+header nav ul li a{
+    height: 60px;
+    line-height: 60px;
+    padding: 0 20px;
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+}
+
+header nav ul li a:hover,
+header nav ul li a.active{
+    background: #32be8f;
+}
+
+.menu-toggle{
+    color: #FFF;
+    float: right;
+    line-height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    padding: 18px 0 18px 0;
+}
+
+@media (max-width: 901px) {
+    header{
+        padding: 0 20px;
+    }
+    .menu-toggle{
+        display: block;
+    }
+
+    header nav{
+        /*display: none;*/
+        position: absolute;
+        width: 100%;
+        height: calc(100vh - 50px);
+        background: #32be8f;
+        top:60px;
+        left: -100%;
+        transition: 0.5s;
+    }
+
+    header nav.active{
+        left: 0;
+    }
+
+    header nav ul{
+        display: block;
+        text-align: center;
+    }
+
+    header nav ul li a{
+        border-bottom: 1px solid rgba(0,0,0,.2);
+    }
+
+    header nav ul li.active ul{
+        position: relative;
+    }
+    header nav ul li ul li{
+        width: 100%;
+    }
 }

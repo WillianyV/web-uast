@@ -18,7 +18,7 @@ class EnderecoVO
      * @param $uf
      * @param $cep
      */
-    public function __construct($id, $numero, $rua, $bairro, $cidade, $uf, $cep)
+    public function __construct($id, $rua, $numero, $cidade, $uf, $cep, $bairro)
     {
         $this->id = $id;
         $this->numero = $numero;

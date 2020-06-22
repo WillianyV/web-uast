@@ -2,7 +2,7 @@
 
 
 namespace ProjetoSGES\src\model\DAO;
-require "Connection.php";
+require_once  "Connection.php";
 use ProjetoSGES\src\model\VO\CursoVO;
 
 class CursoDAO implements InterfacesDAO
@@ -44,7 +44,23 @@ class CursoDAO implements InterfacesDAO
     {
         $link = getConnection();
 
-        $query = "SELECT * FROM tarefas WHERE id=$id";
+        $query = "SELECT * FROM cursos WHERE id='{$id}'";
+
+        if ($result = $link->query($query)){
+            while ($row = $result->fetch_row()){
+                return new CursoVO($row[0], $row[1], $row[2]);
+            }
+        }
+        $link->close();
+        return null;
+    }
+
+    static function findByName($nome)
+    {
+
+        $link = getConnection();
+        echo("DAO" . $nome);
+        $query = "SELECT * FROM cursos WHERE nome='{$nome}'";
 
         if ($result = $link->query($query)){
             while ($row = $result->fetch_row()){

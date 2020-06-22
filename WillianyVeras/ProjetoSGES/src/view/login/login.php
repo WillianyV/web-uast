@@ -1,16 +1,20 @@
-<?php include  __DIR__ . "/../layout/header.php" ?>
-<!--    <img class="wave" src="//--><?php //echo $_SERVER["HTTP_HOST"];?><!--/image/wave.png">-->
-    <link rel="stylesheet" href="../../../public/css/login_style.css">
+<?php
+
+session_start();
+
+include  __DIR__ . "/../layout/header.php" ?>
+
+    <link rel="stylesheet" href="//<?php echo $_SERVER["HTTP_HOST"];?>/css/login_style.css">
     </head>
     <body>
-    <img class="background" src="../../../public/image/wave.png">
+    <img class="background" src= "//<?php echo $_SERVER["HTTP_HOST"];?>/image/wave.png">
     <div class="container">
         <div class="img">
-            <img src="../../../public/image/work.svg">
+            <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/image/work.svg">
         </div>
         <div class="login-content">
             <form action="validar.php" method="post">
-                <img src="../../../public/image/avatar.svg">
+                <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/image/avatar.svg">
                 <h2 class="title">Bem-vindo ao SGES!</h2>
                 <div class="input-div one">
                     <div class="i">
@@ -18,7 +22,7 @@
                     </div>
                     <div class="div">
                         <h5>Login</h5>
-                        <input type="text" class="input" name="usuario">
+                        <input type="text" class="input" name="usuario" required>
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -27,14 +31,20 @@
                     </div>
                     <div class="div">
                         <h5>Senha</h5>
-                        <input type="password" class="input" name="senha">
+                        <input type="password" class="input" name="senha" required>
                     </div>
                 </div>
+                <?php
+                if (isset($_SESSION['message'])){
+                    echo $_SESSION['message'];
+                    unset($_SESSION['message']);
+                }
+                ?></p>
                 <input type="submit" class="btn" value="Entrar">
             </form>
         </div>
     </div>
 
-    <script src="../../../public/js/login_script.js"></script>
+    <script src="//<?php echo $_SERVER["HTTP_HOST"];?>/js/login_script.js"></script>
     <!--Código Base.: https://www.youtube.com/watch?v=t-EMinSz_Tk&t=1105s-->
 <?php include __DIR__ . "/../layout/footer.php" ?>
