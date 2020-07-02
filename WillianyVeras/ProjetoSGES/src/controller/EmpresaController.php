@@ -53,13 +53,13 @@ class EmpresaController implements InterfacesController
         $bairro = $_POST['bairro'];
         $rua = $_POST['rua'];
         $numero = $_POST['numero'];
-        $endereco = new EnderecoVO(null,$numero,$rua,$bairro,$cidade,$uf,$cep);
+        $endereco = new EnderecoVO(null, $rua,$numero,$numero,$cidade,$uf,$cep,$bairro);
         EnderecoDAO::create($endereco);
 
         $nome_curso = $_POST['curso'];
         $curso = CursoDAO::findByName($nome_curso);
 
-        $empresaVO = new EmpresaVO(null,$vagas,$nome_empresa,$CNPJ,$telefone,$nome_proprietario,$nome_responsavel,$CPF_proprietario,$CPF_responsavel,$endereco,$curso);
+        $empresaVO = new EmpresaVO(null,$nome_empresa,$vagas,$telefone,$nome_proprietario,$nome_responsavel,$CPF_responsavel,$CPF_proprietario,$CNPJ,$endereco,$curso);
         EmpresaDAO::create($empresaVO);
     }
 
@@ -82,14 +82,14 @@ class EmpresaController implements InterfacesController
         $bairro = $_POST['bairro'];
         $rua = $_POST['rua'];
         $numero = $_POST['numero'];
-        $endereco = new EnderecoVO(null,$numero,$rua,$bairro,$cidade,$uf,$cep);
+        $endereco = new EnderecoVO(null, $rua,$numero,$numero,$cidade,$uf,$cep,$bairro);
         $empresa = EmpresaDAO::findById($id);
         EnderecoDAO::update($empresa->getEndereco(),$endereco);
 
         $nome_curso = $_POST['curso'];
         $curso = CursoDAO::findByName($nome_curso);
 
-        $empresaVO = new EmpresaVO(null,$vagas,$nome_empresa,$CNPJ,$telefone,$nome_proprietario,$nome_responsavel,$CPF_proprietario,$CPF_responsavel,$endereco,$curso);
+        $empresaVO = new EmpresaVO(null,$nome_empresa,$vagas,$telefone,$nome_proprietario,$nome_responsavel,$CPF_responsavel,$CPF_proprietario,$CNPJ,$endereco,$curso);
         EmpresaDAO::update($id,$empresaVO);
     }
 

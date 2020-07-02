@@ -1,14 +1,14 @@
 <?php include __DIR__ . "/../layout/header.php" ?>
 </head>
 <body>
-<?php include __DIR__ . "/../layout/navAluno.php" ?>
+<?php include __DIR__ . "/../layout/navProfessor.php" ?>
 
 <div class="container">
     <div class="img">
-        <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/image/alunos.svg">
+        <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/image/professor.svg">
     </div>
     <div class="content">
-        <h2>Seja Bem-vindo Aluno(a)!</h2>
+        <h2>Seja Bem-vindo Professor(a)!</h2>
     </div>
 </div>
 

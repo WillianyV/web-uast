@@ -7,12 +7,10 @@
             <div class="img">
                 <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/image/coordenador.svg">
             </div>
+            <div class="content">
+                <h2>Seja Bem-vindo Coordenador(a)!</h2>
+            </div>
         </div>
 
-        <div class="bem-vindo-content">
-            <h1>
-                Seja Bem-vindo Coordenador(a)!
-            </h1>
-        </div>
 
 <?php include __DIR__ . "/../layout/footer.php" ?>

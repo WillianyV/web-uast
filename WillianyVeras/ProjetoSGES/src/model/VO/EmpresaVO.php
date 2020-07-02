@@ -26,7 +26,7 @@ class EmpresaVO
      * @param $endereco
      * @param $curso
      */
-    public function __construct($id, $vagas, $nome_empresa, $CNPJ, $telefone, $nome_proprietario, $nome_responsavel, $CPF_proprietario, $CPF_responsavel, $endereco, $curso)
+    public function __construct($id, $nome_empresa, $vagas, $telefone, $nome_proprietario, $nome_responsavel, $CPF_responsavel, $CPF_proprietario, $CNPJ, $endereco, $curso)
     {
         $this->id = $id;
         $this->vagas = $vagas;

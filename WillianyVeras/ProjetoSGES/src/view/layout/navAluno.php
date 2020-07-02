@@ -1,28 +1,24 @@
-<nav>
-    <!--    <img src="_img/logo-pizzaria-grande.png">-->
-    <ul id="menu-desktop">
-        <li><a href="">HOME</a></li>
-        <li><a href="">CADASTRAR ESTÁGIO</a></li>
-        <li><a href="">ESTÁGIOS</a></li>
-        <li><a href="">SAIR</a></li>
-    </ul>
-
-    <ul id="menu-mobile">
-        <li><a href="">HOME</a></li>
-        <li><a href="">CADASTRAR ESTÁGIO</a></li>
-        <li><a href="">IFORMAÇÃO DO ESTÁGIO</a></li>
-        <li><a href="">SAIR</a></li>
-    </ul>
-
-    <div id="menu-btn">
-        <svg width="30" height="30">
-            <path d="M0,5 30,5"     stroke="#fff" stroke-width="4"/>
-            <path d="M0,15 30,15"   stroke="#fff" stroke-width="4"/>
-            <path d="M0,25 30,25"   stroke="#fff" stroke-width="4"/>
-        </svg>
-    </div>
-</nav>
-
-<header>
-    <!--    <img src="_img/foto-capa-pizza.jpg">-->
-</header>
+    <header>
+        <div class="logo"><a href="/home-aluno"><img src= "//<?php echo $_SERVER["HTTP_HOST"];?>/image/logo2.png" ></a></div>
+        <nav >
+            <ul>
+                <li ><a href="/home-aluno" >HOME</a></li>
+                <li class="sub-menu"><a>ESTÁGIO</a>
+                    <ul>
+                        <li><a href="/estagios?action=create">Cadastrar</a></li>
+<!--                        <li><a href="/estagios?action=edit&id=--><?php //echo $estagio->getId() ?><!--">Editar</a></li>-->
+<!--                        <li><a href="estagios?id=--><?php //echo $estagio->getId() ?><!--">Informações</a></li>-->
+                    </ul>
+                </li>
+                <li class="sub-menu"><a>ALUNO</a>
+                    <ul>
+<!--                        <li><a href="alunos?id=--><?php //echo $aluno->getId() ?><!--">Editar</a></li>-->
+<!--                        <li><a href="/alunos?action=edit&id=--><?php //echo $aluno->getId() ?><!--">Informação</a></li>-->
+                    </ul>
+                </li>
+                <li><a href="#">SAIR</a></li>
+            </ul>
+        </nav>
+        <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+    </header>
+    <script src="//<?php echo $_SERVER["HTTP_HOST"];?>/js/nav_script.js"></script>

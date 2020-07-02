@@ -41,9 +41,16 @@ include __DIR__ . "/../layout/header.php" ?>
 
             <?php $c = CursoDAO::findById($aluno->getCurso())?>
             <option value="<?php echo $c->getNome() ?>"><?php echo $c->getNome() ?></option>
+
             <?php foreach (CursoDAO::findAll() as $curso){?>
                 <option value="<?php echo $curso->getNome() ?>"><?php echo $curso->getNome() ?></option>
             <?php }?>
+
+<!--         COMO FAZER SELESCT COM ARRAY ?-->
+
+<!--            <option value="Feminino" --><?php //if($aluno->getSexo() == "Feminino"){echo "selected";}?><!-->Feminino</option>-->
+<!--            <option value="Masculino" --><?php //if($aluno->getSexo() == "Masculino"){echo "selected";}?><!-->Masculino</option>-->
+
         </select>
     </div>
     <div class="div">

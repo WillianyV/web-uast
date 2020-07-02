@@ -27,7 +27,6 @@ class ProfessorDAO implements InterfacesDAO
         //TABELA PROFESSOR_CURSO
         $lastId = self::findLastId();
         foreach ($cursos as $c) {
-//            COMO PEGAR ID?
             $cursoId = $c->getId();
             $sql_query = "INSERT INTO professores_cursos(id_professor, id_curso) VALUES ('{$lastId}','{$cursoId}')";
             $result2 = $link->query($sql_query);
@@ -54,7 +53,6 @@ class ProfessorDAO implements InterfacesDAO
                 foreach ($cursosId as $id){
                     $cursos [] = CursoDAO::findById($id);
                 }
-
                 $prodessores [] = new ProfessorVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$cursos);
             }
 
@@ -71,7 +69,14 @@ class ProfessorDAO implements InterfacesDAO
 
         if ($result = $link->query($query)){
             while ($row = $result->fetch_row()){
-                return new ProfessorVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],array($row[6]));
+
+                $cursosId = ProfessorCursoDAO::findByProfessorId($row[0]);
+                $cursos = [];
+                foreach ($cursosId as $id){
+                    $cursos [] = CursoDAO::findById($id);
+                }
+
+                return new ProfessorVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$cursos);
             }
         }
         $link->close();
@@ -100,7 +105,14 @@ class ProfessorDAO implements InterfacesDAO
 
         if ($result = $link->query($query)){
             while ($row = $result->fetch_row()){
-                return new ProfessorVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6]);
+
+                $cursosId = ProfessorCursoDAO::findByProfessorId($row[0]);
+                $cursos = [];
+                foreach ($cursosId as $id){
+                    $cursos [] = CursoDAO::findById($id);
+                }
+
+                return new ProfessorVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$cursos);
             }
         }
         $link->close();
@@ -121,13 +133,16 @@ class ProfessorDAO implements InterfacesDAO
         $query = "UPDATE professores SET nome='{$nome}',vagas_orientandos='{$vagas_orientados}',login='{$login}',senha='{$senha}',cod_servidor='{$cod_servidor}' WHERE id=$id";
         $link->query($query);
 
+
         foreach ($cursos as $c) {
-//            COMO PEGAR ID?
-//            $cursoId = $c->getId();
-            //pegar id de curso_profesor?
-//            $sql_query = "UPDATE professores_cursos SET id_professor='{$id}',id_curso ='{$cursoID}' WHERE id=$id";
-//            $link->query($sql_query);
+            $cursoId = $c;
+            $sql_query = "UPDATE professores_cursos SET id_professor='{$id}',id_curso ='{$cursoId}' WHERE id_professor=$id";;
+            $result2 = $link->query($sql_query);
+            if (!$result2) {
+                die ("Erro ao cadastrar o Curso do Professor " . mysqli_error());
+            }
         }
+
         $link->close();
     }
 
@@ -135,9 +150,9 @@ class ProfessorDAO implements InterfacesDAO
     {
         $link = getConnection();
         $query = "DELETE FROM professores WHERE id=$id";
-        $query2 = "DELETE FROM professores_cursos WHERE id=$id";// não sei se é assim!
-        $link->query($query);
+        $query2 = "DELETE FROM professores_cursos WHERE id_professor=$id";
         $link->query($query2);
+        $link->query($query);
         $link->close();
     }
 }

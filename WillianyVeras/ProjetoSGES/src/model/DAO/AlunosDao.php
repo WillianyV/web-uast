@@ -79,6 +79,20 @@ class AlunosDao implements InterfacesDAO
         $link->close();
         return null;
     }
+
+    static function findByMatricula($matricula){
+        $link = getConnection();
+        $query = "SELECT * FROM alunos WHERE  matricula ='{$matricula}' limit 1";
+        if($result = $link->query($query)){
+            while ($row = $result->fetch_row()){
+                return new AlunoVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9],$row[10],$row[11]);
+            }
+        }
+
+        $link->close();
+        return null;
+    }
+
     static function update($id, $aluno)
     {
         echo("dao aluno");

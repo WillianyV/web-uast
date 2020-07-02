@@ -88,6 +88,31 @@ class EstagioDAO implements InterfacesDAO
         $link->close();
     }
 
+    static function confirmarOrientacao($idEstagio){
+        $link = getConnection();
+        $status = "solicitado";
+        $query = "UPDATE estagios SET status='{$status}' WHERE id=$idEstagio";
+        $link->query($query);
+        $link->close();
+    }
+
+    static function confirmarEstagioCoordenacao(){
+        $estagios = [];
+        $link = getConnection();
+        $status = "solicitado";
+        $query = "SELECT * FROM estagios WHERE status = $status";
+
+        if($result = $link->query($query)){
+            while($row = $result->fetch_row()){
+                $estagios [] = new EstagioVO($row[0],$row[1],$row[2],$row[3],$row[4],$row[5],$row[6],$row[7],$row[8],$row[9],$row[10]);
+            }
+        }
+
+        $link->close();
+        return $estagios;
+    }
+
+//    USAR O DELETE TBM PARA dispensarOrientacoes()
     static function delete($id)
     {
         $link = getConnection();
@@ -95,4 +120,6 @@ class EstagioDAO implements InterfacesDAO
         $link->query($query);
         $link->close();
     }
+
+
 }

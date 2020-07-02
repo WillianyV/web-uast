@@ -3,6 +3,9 @@ use ProjetoSGES\src\model\DAO\CursoDAO;
 include __DIR__ . "/../layout/header.php" ?>
     </head>
     <body>
+
+    <?php include __DIR__ . "/../layout/navCoordenacao.php" ?>
+
     <h1>Alunos</h1>
 
     <button onclick="location.href ='/alunos?action=create';" class="btn-novo">Novo Aluno</button>

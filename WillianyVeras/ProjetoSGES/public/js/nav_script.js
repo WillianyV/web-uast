@@ -1,10 +1,12 @@
 $(function() {
     $('.menu-toggle').click(function () {
-        $('nav').toggleClass('active');
+        $('nav').toggleClass('ativar');
     })
 
     $('ul li').click(function () {
-       $(this).siblings().removeClass('active');
-        $(this).toggleClass('active');
+       $(this).siblings().removeClass('ativar');
+        $(this).toggleClass('ativar');
     })
+
 })
+

@@ -12,7 +12,7 @@ include  __DIR__ . "/../layout/header.php" ?>
         <div class="img">
             <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/image/work.svg">
         </div>
-        <div class="login-content">
+        <div class="content">
             <form action="validar.php" method="post">
                 <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/image/avatar.svg">
                 <h2 class="title">Bem-vindo ao SGES!</h2>

@@ -10,7 +10,6 @@
         if(mysqli_connect_errno()){
             die("Conexão Falhou" . mysqli_connect_error());
         }else{
-            echo "Conectou";
             return $connection;
         }
 }

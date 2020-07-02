@@ -2,6 +2,7 @@
 
 
 namespace ProjetoSGES\src\controller;
+use ProjetoSGES\src\model\DAO\AlunosDao;
 use ProjetoSGES\src\model\DAO\Util;
 use ProjetoSGES\src\model\VO\EstagioVO;
 use ProjetoSGES\src\model\DAO\EstagioDAO;
@@ -43,7 +44,8 @@ class EstagioController implements InterfacesController
         $curso = $_POST['curso'];
         $empresa = $_POST['empresa'];
         $professor = $_POST['professor'];
-        $aluno = Util::$usuarioLogado->getId();
+        $alunoPesquisa = AlunosDao::findByMatricula($matricula);
+        $aluno = $alunoPesquisa->getID();
         $status = "Solicitado";
         $estagio = new EstagioVO(null,$numero_seguro,$status,$matricula,$turno,null,null,$professor,$curso,$aluno,$empresa);
         EstagioDAO::create($estagio);

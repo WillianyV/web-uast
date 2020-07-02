@@ -59,7 +59,6 @@ class CursoDAO implements InterfacesDAO
     {
 
         $link = getConnection();
-        echo("DAO" . $nome);
         $query = "SELECT * FROM cursos WHERE nome='{$nome}'";
 
         if ($result = $link->query($query)){

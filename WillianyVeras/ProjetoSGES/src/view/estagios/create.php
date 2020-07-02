@@ -8,9 +8,6 @@ include __DIR__ . "/../layout/header.php" ?>
 <body>
 <div class="container">
     <form action="/estagios" method="post">
-<!--        $status, $data_inicio_estagio, $data_fim_estagio;-->
-<!--        private $aluno = AlunoVO;-->
-
         <div class="div">
             <h5>Matrícula</h5>
             <input type="text" name="matricula" id="matricula" class="input" required>
@@ -50,9 +47,10 @@ include __DIR__ . "/../layout/header.php" ?>
             <h5>Professor</h5>
             <select name="professor" id="professor">
                 <option>Selecione</option>
-                <?php foreach (ProfessorDAO::findAll() as $professor){?>
-                    <option value="<?php echo $professor->getNome() ?>"><?php echo $professor->getNome() ?></option>
-                <?php }?>
+                <?php foreach (ProfessorDAO::findAll() as $professor){ ?>
+                    <option value="<?php echo $professor->getNome() ?>"> <?php echo $professor->getNome() ?> </option>
+                <?php } ?>
+
         </div>
         <button type="submit">Salvar</button>
     </form>

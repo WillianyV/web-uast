@@ -11,6 +11,8 @@ use ProjetoSGES\src\controller\EstagioController;
 use ProjetoSGES\src\controller\LoginController;
 use ProjetoSGES\src\controller\ProfessorController;
 use ProjetoSGES\src\controller\HomeCoordenacaoController;
+use ProjetoSGES\src\controller\HomeAlunoController;
+use ProjetoSGES\src\controller\HomeProfessorController;
 
 $caminho = $_SERVER["PATH_INFO"]; // com erro
 $metodo = $_SERVER["REQUEST_METHOD"];
@@ -60,6 +62,16 @@ switch($caminho){
 
     case "/home-coordenacao":
         $controller = new HomeCoordenacaoController();
+        metodo($metodo,$controller);
+        break;
+
+    case "/home-aluno":
+        $controller = new HomeAlunoController();
+        metodo($metodo,$controller);
+        break;
+
+    case "/home-professor":
+        $controller = new HomeProfessorController();
         metodo($metodo,$controller);
         break;
 
