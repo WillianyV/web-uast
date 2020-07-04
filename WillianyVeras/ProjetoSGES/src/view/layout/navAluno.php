@@ -6,6 +6,7 @@
                 <li class="sub-menu"><a>ESTÁGIO</a>
                     <ul>
                         <li><a href="/estagios?action=create">Cadastrar</a></li>
+
 <!--                        <li><a href="/estagios?action=edit&id=--><?php //echo $estagio->getId() ?><!--">Editar</a></li>-->
 <!--                        <li><a href="estagios?id=--><?php //echo $estagio->getId() ?><!--">Informações</a></li>-->
                     </ul>
@@ -13,7 +14,6 @@
                 <li class="sub-menu"><a>ALUNO</a>
                     <ul>
 <!--                        <li><a href="alunos?id=--><?php //echo $aluno->getId() ?><!--">Editar</a></li>-->
-<!--                        <li><a href="/alunos?action=edit&id=--><?php //echo $aluno->getId() ?><!--">Informação</a></li>-->
                     </ul>
                 </li>
                 <li><a href="#">SAIR</a></li>

@@ -101,7 +101,7 @@ class ProfessorDAO implements InterfacesDAO
     {
         $link = getConnection();
 
-        $query = "SELECT * FROM professores WHERE login='{$login}' AND senha = '{$senha}' limit 1";
+        $query = "SELECT * FROM professores WHERE login='{$login}' AND senha='{$senha}' limit 1";
 
         if ($result = $link->query($query)){
             while ($row = $result->fetch_row()){

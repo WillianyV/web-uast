@@ -11,5 +11,4 @@
             <div class="div-form"><button type="submit">Salvar</button></div>
         </form>
     </div>
-    <script src="//<?php echo $_SERVER["HTTP_HOST"];?>/js/login_script.js"></script>
 <?php include __DIR__ . "/../layout/footer.php" ?>

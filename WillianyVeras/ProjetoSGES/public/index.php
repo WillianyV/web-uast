@@ -109,5 +109,10 @@ function metodo($metodo, $controller){
         case "DELETE":
             $controller->delete();
             break;
+
+        case "LOGIN":
+            $controller->login();
+            break;
+
     }
 }

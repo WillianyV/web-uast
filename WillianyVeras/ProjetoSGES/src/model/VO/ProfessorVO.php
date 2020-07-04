@@ -19,7 +19,7 @@ class ProfessorVO extends UsuarioVO
      * @param $cod_servidor
      * @param array $cursos
      */
-    public function __construct($id, $nome, $login, $senha, $vagas_orientados, $cod_servidor, array $cursos)
+    public function __construct($id, $nome,$vagas_orientados, $login, $senha,$cod_servidor, array $cursos)
     {
         parent::__construct($id, $nome, $login, $senha);
         $this->vagas_orientados = $vagas_orientados;

@@ -198,7 +198,7 @@ header nav ul li a.ativar{
 .grid-container div,
 .centralizar{
     text-align: center;
-    width: 600px;
+    width: 700px;
     height: 300px;
 }
 
@@ -280,6 +280,10 @@ td{
     height: 90vh;
 }
 
+.aumentar-top{
+    width: 95vw;
+    height: 130vh;
+}
 .div-form{
     padding-bottom: 10px;
     color: black;
@@ -300,7 +304,9 @@ td{
 .titulos{
     color: #2daa80;
 }
-
+.cursos-alinhar{
+    text-align: left;
+}
 
 @media screen and (max-width: 1000px){
     /*HOME'S*/
@@ -367,12 +373,6 @@ td{
         justify-content: center;
     }
     /*fim home*/
-    /*inicio coordenador moodal*/
-    .modal{
-        top: 30%;
-        left: 25%;
-    }
-    /*inicio coordenador moodal*/
 
     .grid-container{
         width: 95vw;

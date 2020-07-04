@@ -13,26 +13,10 @@
                         <li><a href="/alunos">Aluno</a></li>
                     </ul>
                 </li>
-                <li><a href="#">LIBERAR ACESSO</a></li>
-                <li class="sub-menu" id="sair"><a>SAIR</a>
-                    <ul>
-                        <li><a href="#">Logout</a></li>
-                        <li><a href="#">Sair</a></li>
-                    </ul>
-                </li>
+                <li><a href="#">SAIR</a></li>
             </ul>
         </nav>
         <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
     </header>
-
-<!--    <div id="abrir" class="modal">-->
-<!--        <button onclick="location.href ='#fechar';" class="fechar">&times;</button>-->
-<!--        <h2>Liberar aluno</h2>-->
-<!--        <form action="#" method="post">-->
-<!--            <h5>Número da matricula</h5>-->
-<!--            <input type="text" class="input" name="n-matricula" id="n-matricula">-->
-<!--            <button type="submit" class="liberar-aluno-button">Liberar</button>-->
-<!--        </form>-->
-<!--    </div>-->
     <script src="//<?php echo $_SERVER["HTTP_HOST"];?>/js/nav_script.js"></script>
 

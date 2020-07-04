@@ -6,7 +6,6 @@
         <div class="centralizar">
             <form action="/cursos?id=<?php echo $id ?>" method="POST">
                 <input type="hidden" name="_method" value="PUT">
-                <h1 class="titulos">Editar curso <?php echo "\"" . $curso->getNome() . "\""  ?></h1>
 
                 <div class="div-form">Nome do curso</div>
                 <div class="div-form"><input type="text" name="nome" id="nome" placeholder="Nome do Curso" value="<?php echo $curso->getNome()?>"></div>

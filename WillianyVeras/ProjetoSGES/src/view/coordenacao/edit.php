@@ -3,10 +3,9 @@
     <body>
     <?php include __DIR__ . "/../layout/navCoordenacao.php" ?>
 
-    <div class="centralizar">
+    <div class="centralizar aumentar-top">
     <form action="/coordenacao?id=<?php echo $id ?>" method="POST">
         <input type="hidden" name="_method" value="PUT">
-        <h1 class="titulos">Editar coordenador(a) <?php echo "\"" . $coordenador->getNome() . "\""  ?></h1>
 
         <div class="div-form">Nome</div>
         <div class="div-form"><input type="text" name="nome" id="nome" value="<?php echo $coordenador->getNome()?>" ></div>

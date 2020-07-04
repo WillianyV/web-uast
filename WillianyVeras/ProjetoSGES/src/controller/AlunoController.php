@@ -101,4 +101,5 @@ class AlunoController implements InterfacesController
         EnderecoDAO::delete($aluno->getEndereco());
         AlunosDao::delete($id);
     }
+
 }

@@ -13,7 +13,8 @@ include  __DIR__ . "/../layout/header.php" ?>
             <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/image/work.svg">
         </div>
         <div class="content">
-            <form action="validar.php" method="post">
+            <form action="/login" method="post">
+                <input type="hidden" name="_method" value="LOGIN">
                 <img src="//<?php echo $_SERVER["HTTP_HOST"];?>/image/avatar.svg">
                 <h2 class="title">Bem-vindo ao SGES!</h2>
                 <div class="input-div one">
@@ -22,7 +23,7 @@ include  __DIR__ . "/../layout/header.php" ?>
                     </div>
                     <div class="div">
                         <h5>Login</h5>
-                        <input type="text" class="input" name="usuario" required>
+                        <input type="text" class="input" name="usuario" id="usuario" required>
                     </div>
                 </div>
                 <div class="input-div pass">
@@ -31,7 +32,7 @@ include  __DIR__ . "/../layout/header.php" ?>
                     </div>
                     <div class="div">
                         <h5>Senha</h5>
-                        <input type="password" class="input" name="senha" required>
+                        <input type="password" class="input" name="senha" id="senha" required>
                     </div>
                 </div>
                 <?php
